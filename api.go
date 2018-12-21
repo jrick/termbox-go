@@ -24,7 +24,7 @@ import "time"
 func Init() error {
 	var err error
 
-	out, err = os.OpenFile("/dev/tty", syscall.O_WRONLY, 0)
+	out, err = os.OpenFile("/dev/tty", syscall.O_RDWR, 0)
 	if err != nil {
 		return err
 	}
