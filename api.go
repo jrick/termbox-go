@@ -28,10 +28,7 @@ func Init() error {
 	if err != nil {
 		return err
 	}
-	in, err = syscall.Open("/dev/tty", syscall.O_RDONLY, 0)
-	if err != nil {
-		return err
-	}
+	in = int(out.Fd())
 
 	err = setup_term()
 	if err != nil {
